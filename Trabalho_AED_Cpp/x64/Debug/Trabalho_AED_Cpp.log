@@ -1,2 +1,4 @@
-﻿  Trabalho_AED_Cpp.cpp
-  Trabalho_AED_Cpp.vcxproj -> C:\Workspaces\ws-trabalho_AED1\Trabalho_AED_Cpp\x64\Debug\Trabalho_AED_Cpp.exe
+﻿C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Microsoft\VC\v170\Microsoft.CppBuild.targets(510,5): warning MSB8028: O diretório intermediário (x64\Debug\) contém arquivos compartilhados de outro projeto (Trabalho_AED_Cpp.vcxproj). Isso pode levar a um comportamento incorreto de limpeza e recompilação.
+  Trabalho_AED_Cpp.cpp
+C:\Workspaces\ws-trabalho_AED1\Primeiro-Projeto-IA-Cpp-main\Trabalho_AED_Cpp\Trabalho_AED_Cpp.cpp(69,15): warning C4244: 'argumento': conversão de 'time_t' para 'unsigned int', possível perda de dados
+  Trabalho_AED_Cpp.vcxproj -> C:\Workspaces\ws-trabalho_AED1\Primeiro-Projeto-IA-Cpp-main\x64\Debug\Primeiro-Projeto-IA-Cpp.exe
