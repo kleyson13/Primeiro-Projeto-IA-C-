@@ -5,10 +5,19 @@
 #include <locale.h>
 #include <time.h>
 #include <Windows.h>
+#include <limits>
 
 using namespace std;
 using namespace Microsoft::CognitiveServices::Speech;
 using namespace Microsoft::CognitiveServices::Speech::Audio;
+
+/*std::fstream& GotoLine(std::fstream& file, unsigned int num) {
+    file.seekg(std::ios::beg);
+    for (int i = 0; i < num - 1; ++i) {
+        file.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+    }
+    return file;
+}*/
 
 auto autenticacao = SpeechConfig::FromSubscription("bb33f111891842028908eae14f359dd0", "brazilsouth");
 auto requisicao_textofala = SpeechSynthesizer::FromConfig(autenticacao);
@@ -71,9 +80,27 @@ int escolhe_letra()
     return (letra);
 }
 
+string palavra_aleatoria()
+{
+    string palavra;
+    int linhaAleatoria;
+
+    fstream arquivo("A.txt");
+
+    srand(time(NULL));
+    linhaAleatoria = rand() % 44237;
+
+    fseek(arquivo, 2 * sizeof(linhaAleatoria), SEEK_SET);
+
+    
+    return(palavra);
+}
+
 void jogo_iniciado()
 {
     texto_em_fala("Okay, vamos iniciar o jogo!");
+    texto_em_fala("Iniciando em 3... 2... 1...");
+
     system("cls");
 }
 
@@ -89,7 +116,7 @@ void inicio()
     {
         texto_em_fala("\nÓtimo, quer que eu te passe as instruções?");
         opcao = fala_em_texto();
-        if (opcao == ("Sim.") || opcao == ("Claro.") || opcao == ("Com certeza."))
+        if (opcao == ("Sim.") || opcao == ("Claro.") || opcao == ("Com certeza.") || opcao == ("Por favor."))
         {
             instrucoes();
         }
@@ -122,6 +149,33 @@ int main()
     try
     {
         inicio();
+
+        int opcao = escolhe_letra();
+
+        texto_em_fala(palavra_aleatoria());
+
+
+
+
+
+
+       /* switch (opcao)
+        {
+        case (0):
+            string palavra;
+            arquivo.open("C:\Workspaces\ws-trabalho_AED1\Primeiro-Projeto-IA-Cpp-main\Trabalho_AED_Cpp\Dicionario\A.txt");
+            if (arquivo.is_open()) {
+                getline(arquivo, palavra);
+            }
+            else {
+                texto_em_fala("Não foi encontrado o dicionário");
+            }
+
+
+
+        default:
+            break;
+        }*/
 
     }
     catch (exception e)
