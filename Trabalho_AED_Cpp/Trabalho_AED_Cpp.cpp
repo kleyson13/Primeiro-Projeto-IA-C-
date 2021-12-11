@@ -11,14 +11,6 @@ using namespace std;
 using namespace Microsoft::CognitiveServices::Speech;
 using namespace Microsoft::CognitiveServices::Speech::Audio;
 
-/*std::fstream& GotoLine(std::fstream& file, unsigned int num) {
-    file.seekg(std::ios::beg);
-    for (int i = 0; i < num - 1; ++i) {
-        file.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
-    }
-    return file;
-}*/
-
 auto autenticacao = SpeechConfig::FromSubscription("bb33f111891842028908eae14f359dd0", "brazilsouth");
 auto requisicao_textofala = SpeechSynthesizer::FromConfig(autenticacao);
 auto audioConfig = AudioConfig::FromDefaultMicrophoneInput();
@@ -49,10 +41,9 @@ void repeticao_instrucoes()
     if (opcao == ("Sim.") || opcao == ("Preciso."))
     {
         instrucoes();
-        opcao = "";
     }
     else {
-        jogo_iniciado();
+        
     }
 }
 
@@ -67,7 +58,7 @@ void instrucoes()
     texto_em_fala("- Eu vou escolher uma letra aleatoriamente e todas as palavras deverão iniciar com essa letra.\n");
     texto_em_fala("- Uma vez eu falo, outra vez você.\n");
     texto_em_fala("- Cada palavra correta, corresponde a 5 pontos.\n");
-    texto_em_fala("- Se ficar mais de 5 segundos sem falar a palavra, perde o jogo e é exibido a quantidade de pontos e a maior pontuação já alcançada.\n");
+    texto_em_fala("- Se ficar mais de 5 segundos sem falar a palavra, perde o jogo e é exibido a quantidade de \npontos e a maior pontuação já alcançada.\n");
 
     repeticao_instrucoes();
 }
@@ -76,30 +67,45 @@ int escolhe_letra()
 {
     int letra = 0;
     srand(time(NULL));
-    letra = rand() % 26;
+    letra = rand() % 25;
     return (letra);
 }
 
-string palavra_aleatoria()
+string palavra_PC(string caminho)
 {
     string palavra;
-    int linhaAleatoria;
-
-    fstream arquivo("A.txt");
-
-    srand(time(NULL));
-    linhaAleatoria = rand() % 44237;
-
-    fseek(arquivo, 2 * sizeof(linhaAleatoria), SEEK_SET);
-
     
-    return(palavra);
+    ifstream arquivo;  
+    arquivo.open(caminho);
+    
+    if (arquivo.is_open()) {
+        getline(arquivo, palavra);
+        arquivo.close();
+    }
+    else {
+        texto_em_fala("ERROR: Não foi possivel encontrar o dicionario.");
+    }
+
+    return palavra;
+}
+
+void arquivo_letra(char letra) {
+    string caminho;
+    string palavraPC;
+
+    texto_em_fala("A letra selecionada, foi " + letra);
+
+    caminho = letra + ".txt";
+
+    palavraPC = palavra_PC(caminho);
+    texto_em_fala(palavraPC);
 }
 
 void jogo_iniciado()
 {
-    texto_em_fala("Okay, vamos iniciar o jogo!");
-    texto_em_fala("Iniciando em 3... 2... 1...");
+    system("cls");
+    texto_em_fala("Okay, vamos iniciar o jogo!\n");
+    texto_em_fala("Iniciando em 3... 2... 1...\n");
 
     system("cls");
 }
@@ -112,9 +118,9 @@ void inicio()
     texto_em_fala("\nOlá " + nome + " Vamos jogar um jogo?\n");
     string opcao = fala_em_texto();
 
-    if (opcao == ("Sim.") || opcao == ("Claro.") || opcao == ("Com certeza."))
+    if (opcao == ("Sim.") || opcao == ("Claro.") || opcao == ("Com certeza.") || opcao == ("Vamos."))
     {
-        texto_em_fala("\nÓtimo, quer que eu te passe as instruções?");
+        texto_em_fala("\nÓtimo, quer que eu te passe as instruções?\n");
         opcao = fala_em_texto();
         if (opcao == ("Sim.") || opcao == ("Claro.") || opcao == ("Com certeza.") || opcao == ("Por favor."))
         {
@@ -122,7 +128,6 @@ void inicio()
         }
         else
         {
-            jogo_iniciado();
         }
     }
     else
@@ -149,33 +154,146 @@ int main()
     try
     {
         inicio();
+        jogo_iniciado();
 
         int opcao = escolhe_letra();
 
-        texto_em_fala(palavra_aleatoria());
-
-
-
-
-
-
-       /* switch (opcao)
+        switch (opcao)
         {
         case (0):
-            string palavra;
-            arquivo.open("C:\Workspaces\ws-trabalho_AED1\Primeiro-Projeto-IA-Cpp-main\Trabalho_AED_Cpp\Dicionario\A.txt");
-            if (arquivo.is_open()) {
-                getline(arquivo, palavra);
-            }
-            else {
-                texto_em_fala("Não foi encontrado o dicionário");
-            }
+            arquivo_letra('A');
 
+            break;
 
+        case (1):
+            arquivo_letra('B');
+
+            break;
+
+        case (2):
+            arquivo_letra('C');
+
+            break;
+
+        case (3):
+            arquivo_letra('D');
+
+            break;
+
+        case (4):
+            arquivo_letra('E');
+
+            break;
+
+        case (5):
+            arquivo_letra('F');
+
+            break;
+
+        case (6):
+            arquivo_letra('G');
+
+            break;
+
+        case (7):
+            arquivo_letra('H');
+
+            break;
+
+        case (8):
+            arquivo_letra('I');
+
+            break;
+
+        case (9):
+            arquivo_letra('J');
+
+            break;
+
+        case (10):
+            arquivo_letra('K');
+
+            break;
+
+        case (11):
+            arquivo_letra('L');
+
+            break;
+
+        case (12):
+            arquivo_letra('M');
+
+            break;
+
+        case (13):
+            arquivo_letra('N');
+
+            break;
+
+        case (14):
+            arquivo_letra('O');
+
+            break;
+
+        case (15):
+            arquivo_letra('P');
+
+            break;
+
+        case (16):
+            arquivo_letra('Q');
+
+            break;
+
+        case (17):
+            arquivo_letra('R');
+
+            break;
+
+        case (18):
+            arquivo_letra('S');
+
+            break;
+
+        case (19):
+            arquivo_letra('T');
+
+            break;
+
+        case (20):
+            arquivo_letra('U');
+
+            break;
+
+        case (21):
+            arquivo_letra('V');
+
+            break;
+
+        case (22):
+            arquivo_letra('W');
+
+            break;
+
+        case (23):
+            arquivo_letra('X');
+
+            break;
+
+        case (24):
+            arquivo_letra('Y');
+
+            break;
+
+        case (25):
+            arquivo_letra('Z');
+
+            break;
 
         default:
+            texto_em_fala("ERROR:");
             break;
-        }*/
+        }
 
     }
     catch (exception e)
