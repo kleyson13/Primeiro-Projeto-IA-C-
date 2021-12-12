@@ -90,15 +90,7 @@ string palavra_PC(string caminho)
 }
 
 void arquivo_letra(char letra) {
-    string caminho;
-    string palavraPC;
-
-    texto_em_fala("A letra selecionada, foi " + letra);
-
-    caminho = letra + ".txt";
-
-    palavraPC = palavra_PC(caminho);
-    texto_em_fala(palavraPC);
+    
 }
 
 void jogo_iniciado()
@@ -157,141 +149,273 @@ int main()
         jogo_iniciado();
 
         int opcao = escolhe_letra();
+        string caminho;
+        string palavraPC;
 
         switch (opcao)
         {
         case (0):
-            arquivo_letra('A');
+            texto_em_fala("A letra selecionada, foi A");
+
+            caminho = "A.txt";
+
+            palavraPC = palavra_PC(caminho);
+            texto_em_fala(palavraPC);
 
             break;
 
         case (1):
-            arquivo_letra('B');
+            texto_em_fala("A letra selecionada, foi B");
+
+            caminho = "B.txt";
+
+            palavraPC = palavra_PC(caminho);
+            texto_em_fala(palavraPC);
 
             break;
 
         case (2):
-            arquivo_letra('C');
+            texto_em_fala("A letra selecionada, foi C");
+
+            caminho = "C.txt";
+
+            palavraPC = palavra_PC(caminho);
+            texto_em_fala(palavraPC);
 
             break;
 
         case (3):
-            arquivo_letra('D');
+            texto_em_fala("A letra selecionada, foi D");
+
+            caminho = "D.txt";
+
+            palavraPC = palavra_PC(caminho);
+            texto_em_fala(palavraPC);
 
             break;
 
         case (4):
-            arquivo_letra('E');
+            texto_em_fala("A letra selecionada, foi E");
+
+            caminho = "E.txt";
+
+            palavraPC = palavra_PC(caminho);
+            texto_em_fala(palavraPC);
 
             break;
 
         case (5):
-            arquivo_letra('F');
+            texto_em_fala("A letra selecionada, foi F");
+
+            caminho = "F.txt";
+
+            palavraPC = palavra_PC(caminho);
+            texto_em_fala(palavraPC);
 
             break;
 
         case (6):
-            arquivo_letra('G');
+            texto_em_fala("A letra selecionada, foi G");
+
+            caminho = "G.txt";
+
+            palavraPC = palavra_PC(caminho);
+            texto_em_fala(palavraPC);
 
             break;
 
         case (7):
-            arquivo_letra('H');
+            texto_em_fala("A letra selecionada, foi H");
+
+            caminho = "H.txt";
+
+            palavraPC = palavra_PC(caminho);
+            texto_em_fala(palavraPC);
 
             break;
 
         case (8):
-            arquivo_letra('I');
+            texto_em_fala("A letra selecionada, foi I");
+
+            caminho = "I.txt";
+
+            palavraPC = palavra_PC(caminho);
+            texto_em_fala(palavraPC);
 
             break;
 
         case (9):
-            arquivo_letra('J');
+            texto_em_fala("A letra selecionada, foi J");
+
+            caminho = "J.txt";
+
+            palavraPC = palavra_PC(caminho);
+            texto_em_fala(palavraPC);
 
             break;
 
         case (10):
-            arquivo_letra('K');
+            texto_em_fala("A letra selecionada, foi K");
+
+            caminho = "K.txt";
+
+            palavraPC = palavra_PC(caminho);
+            texto_em_fala(palavraPC);
 
             break;
 
         case (11):
-            arquivo_letra('L');
+            texto_em_fala("A letra selecionada, foi L");
+
+            caminho = "L.txt";
+
+            palavraPC = palavra_PC(caminho);
+            texto_em_fala(palavraPC);
 
             break;
 
         case (12):
-            arquivo_letra('M');
+            texto_em_fala("A letra selecionada, foi M");
+
+            caminho = "M.txt";
+
+            palavraPC = palavra_PC(caminho);
+            texto_em_fala(palavraPC);
 
             break;
 
         case (13):
-            arquivo_letra('N');
+            texto_em_fala("A letra selecionada, foi N");
+
+            caminho = "N.txt";
+
+            palavraPC = palavra_PC(caminho);
+            texto_em_fala(palavraPC);
 
             break;
 
         case (14):
-            arquivo_letra('O');
+            texto_em_fala("A letra selecionada, foi O");
+
+            caminho = "O.txt";
+
+            palavraPC = palavra_PC(caminho);
+            texto_em_fala(palavraPC);
 
             break;
 
         case (15):
-            arquivo_letra('P');
+            texto_em_fala("A letra selecionada, foi P");
+
+            caminho = "P.txt";
+
+            palavraPC = palavra_PC(caminho);
+            texto_em_fala(palavraPC);
 
             break;
 
         case (16):
-            arquivo_letra('Q');
+            texto_em_fala("A letra selecionada, foi Q");
+
+            caminho = "Q.txt";
+
+            palavraPC = palavra_PC(caminho);
+            texto_em_fala(palavraPC);
 
             break;
 
         case (17):
-            arquivo_letra('R');
+            texto_em_fala("A letra selecionada, foi R");
+
+            caminho = "R.txt";
+
+            palavraPC = palavra_PC(caminho);
+            texto_em_fala(palavraPC);
 
             break;
 
         case (18):
-            arquivo_letra('S');
+            texto_em_fala("A letra selecionada, foi S");
+
+            caminho = "S.txt";
+
+            palavraPC = palavra_PC(caminho);
+            texto_em_fala(palavraPC);
 
             break;
 
         case (19):
-            arquivo_letra('T');
+            texto_em_fala("A letra selecionada, foi T");
+
+            caminho = "T.txt";
+
+            palavraPC = palavra_PC(caminho);
+            texto_em_fala(palavraPC);
 
             break;
 
         case (20):
-            arquivo_letra('U');
+            texto_em_fala("A letra selecionada, foi U");
+
+            caminho = "U.txt";
+
+            palavraPC = palavra_PC(caminho);
+            texto_em_fala(palavraPC);
 
             break;
 
         case (21):
-            arquivo_letra('V');
+            texto_em_fala("A letra selecionada, foi V");
+
+            caminho = "V.txt";
+
+            palavraPC = palavra_PC(caminho);
+            texto_em_fala(palavraPC);
 
             break;
 
         case (22):
-            arquivo_letra('W');
+            texto_em_fala("A letra selecionada, foi W");
+
+            caminho = "W.txt";
+
+            palavraPC = palavra_PC(caminho);
+            texto_em_fala(palavraPC);
 
             break;
 
         case (23):
-            arquivo_letra('X');
+            texto_em_fala("A letra selecionada, foi X");
+
+            caminho = "X.txt";
+
+            palavraPC = palavra_PC(caminho);
+            texto_em_fala(palavraPC);
 
             break;
 
         case (24):
-            arquivo_letra('Y');
+            texto_em_fala("A letra selecionada, foi Y");
+
+            caminho = "Y.txt";
+
+            palavraPC = palavra_PC(caminho);
+            texto_em_fala(palavraPC);
 
             break;
 
         case (25):
-            arquivo_letra('Z');
+            texto_em_fala("A letra selecionada, foi Z");
+
+            caminho = "Z.txt";
+
+            palavraPC = palavra_PC(caminho);
+            texto_em_fala(palavraPC);
 
             break;
 
         default:
-            texto_em_fala("ERROR:");
+            texto_em_fala("ERROR!");
             break;
         }
 
