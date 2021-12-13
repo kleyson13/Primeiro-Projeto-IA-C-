@@ -1,14 +1,9 @@
 cabacinha
 cabal
 cabala
-cabalas
 cabalista
-cabalistas
 cabalmente
 cabalística
-cabalísticas
-cabalístico
-cabalísticos
 cabana
 cabanas
 cabaré
