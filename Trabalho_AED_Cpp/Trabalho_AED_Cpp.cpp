@@ -1,4 +1,4 @@
-/*------------------------Trabalho de Algoritimo e Estrutura de Dados------------------------
+/*-----------------------Trabalho de Algoritimo e Estrutura de Dados-----------------------
 
 Este projeto é um jogo que de palavras eem que o computador escolhe uma letra aleatória
 e começa a falar palavras que iniciam com a letra escolhida e fica alternando entre palavra
@@ -13,7 +13,6 @@ dita pelo programa e palavra dita pelo jogador.
 #include <locale.h>
 #include <time.h>
 #include <Windows.h>
-#include <limits>
 
 //Definindo o serviço de falas do Azure
 using namespace std;
